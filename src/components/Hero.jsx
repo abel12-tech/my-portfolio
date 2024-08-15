@@ -31,7 +31,7 @@ export default function Hero() {
 
   const iconPositions = [
     { top: "10%", left: "10%" },
-    { top: "20%", left: "80%" },
+    { top: "10%", left: "80%" },
     { top: "40%", left: "15%" },
     { top: "60%", left: "70%" },
     { top: "75%", left: "25%" },
