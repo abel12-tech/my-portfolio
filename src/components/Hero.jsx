@@ -37,7 +37,6 @@ export default function Hero() {
     { top: "75%", left: "25%" },
     { top: "85%", left: "85%" },
     { top: "15%", left: "60%" },
-    { top: "30%", left: "30%" },
     { top: "50%", left: "50%" },
     { top: "70%", left: "15%" },
     { top: "90%", left: "70%" },
