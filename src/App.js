@@ -10,8 +10,8 @@ function App() {
     <div className="min-h-screen overflow-y-auto bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-200">
       <Navbar />
       <Hero />
-      {/* <Skills />
-      <Projects />
+      <Skills />
+      {/* <Projects />
       <ContactMe />
       <Footer /> */}
     </div>

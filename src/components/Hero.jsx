@@ -45,7 +45,7 @@ export default function Hero() {
 
   const iconAnimation = {
     animate: {
-      scale: [1, 1.2, 1],
+      scale: [1.5, 1.2, 1.5],
       opacity: [0.6, 0.8, 0.6],
       transition: {
         duration: 3,
