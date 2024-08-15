@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { BsSun, BsMoon } from "react-icons/bs";
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { BsSun, BsMoon } from 'react-icons/bs';
 
 export default function Navbar() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -23,7 +23,12 @@ export default function Navbar() {
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="flex items-center justify-between p-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-lg border-b border-gray-200 dark:border-gray-700"
+        className={`flex items-center justify-between p-5 shadow-lg
+          bg-gradient-to-r ${
+            theme === 'light'
+              ? 'from-yellow-500 via-blue-500 to-blue-400' // JavaScript to React.js gradient for light mode
+              : 'from-orange-500 via-blue-500 to-yellow-500' // HTML to CSS3 to JavaScript gradient for dark mode
+          }`}
       >
         <div className="text-2xl font-extrabold tracking-tight text-white dark:text-gray-100 font-sans">
           Abel Kinfu
@@ -41,11 +46,11 @@ export default function Navbar() {
         </ul>
       </motion.nav>
 
-      <button
-        onClick={toggleTheme}
+      <button 
+        onClick={toggleTheme} 
         className="fixed bottom-4 left-1/2 transform -translate-x-1/2 p-3 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 rounded-full shadow-lg z-20"
       >
-        {theme === "light" ? (
+        {theme === 'light' ? (
           <BsSun className="w-6 h-6 text-yellow-500" />
         ) : (
           <BsMoon className="w-6 h-6 text-blue-500" />
