@@ -66,7 +66,7 @@ export default function Hero() {
 
         {/* Rotating Circular Icons with Larger Background around Image Section */}
         <motion.div
-          className="relative w-[350px] h-[350px] md:w-[50px] md:h-[450px] lg:w-[450px] lg:h-[650px]"
+          className="relative w-[450px] h-[450px] md:w-[450px] md:h-[450px] lg:w-[450px] lg:h-[450px]"
           {...circleAnimation}
         >
           <div className="rounded-full absolute inset-0 flex justify-center items-center">

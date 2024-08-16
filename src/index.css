@@ -20,18 +20,30 @@
   background: #4a5568; /* Slightly lighter gray on hover */
 }
 
-/* Hide Scrollbar but Allow Scrolling */
-html, body {
+/* Custom Scrollbar for light mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a0aec0; /* Gray for light mode */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e0; /* Lighter gray on hover */
+}
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-y: scroll; /* Allow vertical scrolling */
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-}
-
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+  overflow-y: auto; /* Allow vertical scrolling and show scrollbar */
 }
 
 #root {
