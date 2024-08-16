@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import myphoto from "../assets/me.jpeg";
 import {
   SiJavascript,
@@ -15,6 +15,12 @@ import {
 } from "react-icons/si";
 
 export default function Hero() {
+  const { scrollY } = useViewportScroll();
+  
+  // Applying parallax effects to the circles
+  const yCircle1 = useTransform(scrollY, [0, 500], [0, 50]);
+  const yCircle2 = useTransform(scrollY, [0, 500], [0, 100]);
+
   const icons = [
     <SiHtml5 className="text-orange-500" />,
     <SiCss3 className="text-blue-500" />,
@@ -48,6 +54,7 @@ export default function Hero() {
         <motion.div
           className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]"
           {...circleAnimation}
+          style={{ y: yCircle1 }} // Applying parallax effect
         >
           <div className="rounded-full absolute inset-0 flex justify-center items-center">
             {icons.map((icon, index) => (
@@ -68,6 +75,7 @@ export default function Hero() {
         <motion.div
           className="relative w-[450px] h-[450px] md:w-[450px] md:h-[450px] lg:w-[450px] lg:h-[450px]"
           {...circleAnimation}
+          style={{ y: yCircle2 }} // Applying a slightly stronger parallax effect
         >
           <div className="rounded-full absolute inset-0 flex justify-center items-center">
             <div className="absolute inset-0 rounded-full"></div>
