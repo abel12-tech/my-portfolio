@@ -4,17 +4,17 @@ import { SiJavascript, SiReact, SiHtml5, SiCss3, SiPython, SiMongodb, SiTypescri
 const skills = [
   { name: 'HTML', percent: 100, icon: <SiHtml5 className="text-orange-500 w-8 h-8" /> },
   { name: 'CSS', percent: 100, icon: <SiCss3 className="text-blue-500 w-8 h-8" /> },
-  { name: 'JavaScript', percent: 100, icon: <SiJavascript className="text-yellow-500 w-8 h-8" /> },
+  { name: 'JavaScript', percent: 90, icon: <SiJavascript className="text-yellow-500 w-8 h-8" /> },
   { name: 'React', percent: 90, icon: <SiReact className="text-blue-500 w-8 h-8" /> },
-  { name: 'TypeScript', percent: 70, icon: <SiTypescript className="text-blue-600 w-8 h-8" /> },
+  { name: 'TypeScript', percent: 80, icon: <SiTypescript className="text-blue-600 w-8 h-8" /> },
   { name: 'Python', percent: 70, icon: <SiPython className="text-blue-400 w-8 h-8" /> },
-  { name: 'MongoDB', percent: 80, icon: <SiMongodb className="text-green-600 w-8 h-8" /> },
+  { name: 'MongoDB', percent: 90, icon: <SiMongodb className="text-green-600 w-8 h-8" /> },
 ];
 
 export default function Skills() {
   const iconMovement = {
     animate: {
-      x: [0, 15, -15, 0], // Move icon forward and backward
+      x: [0, 15, -15, 0],
       transition: {
         duration: 2,
         repeat: Infinity,
@@ -24,19 +24,24 @@ export default function Skills() {
   };
 
   return (
-    <section className="relative p-10 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-      {/* Centered Large Curly Braces */}
+    <section className="relative max-w-6xl mx-auto p-10 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 0.25, scale: 1 }} // Increased opacity for better visibility
+        animate={{ opacity: 0.25, scale: 1 }}
         transition={{ duration: 2 }}
         className="absolute inset-0 flex justify-center items-center"
       >
         <div className="flex items-center space-x-32">
-          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-orange-500 via-blue-500 via-yellow-500 to-blue-400 bg-clip-text">
+          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text dark:hidden">
             {"{"}
           </span>
-          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-orange-500 via-blue-500 via-yellow-500 to-blue-400 bg-clip-text">
+          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500 bg-clip-text dark:hidden">
+            {"}"}
+          </span>
+          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text hidden dark:block">
+            {"{"}
+          </span>
+          <span className="text-[25rem] font-bold text-transparent bg-gradient-to-r from-yellow-600 to-yellow-400 bg-clip-text hidden dark:block">
             {"}"}
           </span>
         </div>
@@ -46,7 +51,7 @@ export default function Skills() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3 }}
-        className="text-4xl font-bold mb-10 text-center z-10 bg-gradient-to-r from-yellow-500 via-orange-500 via-blue-500 to-blue-400 text-transparent bg-clip-text"
+        className="text-4xl font-bold mb-10 text-center z-10 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-400 text-transparent bg-clip-text"
       >
         Skills
       </motion.h2>

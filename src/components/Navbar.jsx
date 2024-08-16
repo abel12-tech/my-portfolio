@@ -23,11 +23,11 @@ export default function Navbar() {
       <motion.nav
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className={`flex items-center justify-between p-5 shadow-lg
+        className={`w-full mx-auto flex items-center justify-between p-5 shadow-lg
           bg-gradient-to-r ${
             theme === 'light'
-              ? 'from-yellow-500 via-blue-500 to-blue-400' // JavaScript to React.js gradient for light mode
-              : 'from-orange-500 via-blue-500 to-yellow-500' // HTML to CSS3 to JavaScript gradient for dark mode
+              ? 'from-yellow-500 via-blue-500 to-blue-400'
+              : 'from-orange-500 via-blue-500 to-yellow-500'
           }`}
       >
         <div className="text-2xl font-extrabold tracking-tight text-white dark:text-gray-100 font-sans">
