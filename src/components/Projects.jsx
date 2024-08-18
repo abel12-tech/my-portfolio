@@ -1,76 +1,70 @@
-import Slider from "react-slick";
 import { motion } from 'framer-motion';
+import projectImage1 from '../assets/01 Dashboard _ Vertical 1.png';  
+import projectImage2 from '../assets/06 Apps _ Calendar _ This Month 1.png';
+import projectImage3 from '../assets/01 Dashboard _ Vertical 1.png';
 
 const projects = [
   {
-    title: "Cryptography Dashboard",
-    description: "A dashboard for monitoring cryptography algorithms and encryption techniques.",
-    image: "/path-to-project-image1.jpg",
-    link: "#"
+    title: "Project One",
+    description: "A brief description of Project One.",
+    image: projectImage1,
+    link: "#",
   },
   {
-    title: "Blockchain Explorer",
-    description: "A tool to explore blockchain transactions and blocks.",
-    image: "/path-to-project-image2.jpg",
-    link: "#"
+    title: "Project Two",
+    description: "A brief description of Project Two.",
+    image: projectImage2,
+    link: "#",
   },
   {
-    title: "Secure Messaging App",
-    description: "A messaging app with end-to-end encryption.",
-    image: "/path-to-project-image3.jpg",
-    link: "#"
+    title: "Project Three",
+    description: "A brief description of Project Three.",
+    image: projectImage3,
+    link: "#",
   },
-  // Add more projects here
 ];
 
 export default function Projects() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        }
-      }
-    ]
-  };
-
   return (
-    <section className="p-10 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-      <h2 className="text-3xl font-bold mb-6 text-center">Projects</h2>
-      <Slider {...settings}>
+    <section className="relative w-full px-5 md:px-20 py-10 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+      <motion.h2
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="text-4xl font-bold mb-10 text-center z-10 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-400 text-transparent bg-clip-text"
+      >
+        Projects
+      </motion.h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         {projects.map((project, index) => (
-          <motion.div 
+          <motion.div
             key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.2 }}
-            className="p-4"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 1 }}
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform"
           >
-            <div className="rounded-lg overflow-hidden shadow-lg bg-white dark:bg-gray-800">
-              <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-              <div className="p-5">
-                <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                <p className="mb-4">{project.description}</p>
-                <a href={project.link} className="text-blue-500 dark:text-blue-400 hover:underline">View Project</a>
-              </div>
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-56 object-cover"
+            />
+            <div className="p-5">
+              <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
+              <a
+                href={project.link}
+                className="inline-block bg-gradient-to-r from-yellow-500 via-blue-500 via-blue-400 via-orange-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow-lg"
+              >
+                View Project
+              </a>
             </div>
           </motion.div>
         ))}
-      </Slider>
+      </div>
     </section>
   );
 }

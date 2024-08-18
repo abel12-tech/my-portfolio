@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { BsSun, BsMoon } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -35,13 +36,16 @@ export default function Navbar() {
         </div>
         <ul className="flex items-center space-x-8">
           <li className="text-lg font-semibold text-white dark:text-gray-200 hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors">
-            Home
+            <Link to="/">Home</Link>
           </li>
           <li className="text-lg font-semibold text-white dark:text-gray-200 hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors">
-            Projects
+            <Link to="#">Projects</Link>
           </li>
           <li className="text-lg font-semibold text-white dark:text-gray-200 hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors">
-            About
+            <Link to="#">About</Link>
+          </li>
+          <li className="text-lg font-semibold text-white dark:text-gray-200 hover:text-yellow-300 dark:hover:text-yellow-500 transition-colors">
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </motion.nav>
