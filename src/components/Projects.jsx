@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion';
-import projectImage1 from '../assets/01 Dashboard _ Vertical 1.png';  
-import projectImage2 from '../assets/06 Apps _ Calendar _ This Month 1.png';
-import projectImage3 from '../assets/01 Dashboard _ Vertical 1.png';
+import { motion } from "framer-motion";
+import projectImage1 from "../assets/01 Dashboard _ Vertical 1.png";
+import projectImage2 from "../assets/06 Apps _ Calendar _ This Month 1.png";
+import projectImage3 from "../assets/01 Dashboard _ Vertical 1.png";
 
 const projects = [
   {
@@ -57,9 +57,9 @@ export default function Projects() {
               </p>
               <a
                 href={project.link}
-                className="inline-block bg-gradient-to-r from-yellow-500 via-blue-500 via-blue-400 via-orange-500 to-blue-500 text-white px-4 py-2 rounded-lg shadow-lg"
+                className="text-blue-600 dark:text-blue-400 hover:underline hover:text-blue-800 dark:hover:text-blue-600 transition-colors"
               >
-                View Project
+                See More
               </a>
             </div>
           </motion.div>

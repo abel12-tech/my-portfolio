@@ -23,12 +23,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/projects" className="hover:text-yellow-500 transition-colors">
+                <a href="/" className="hover:text-yellow-500 transition-colors">
                   Projects
                 </a>
               </li>
               <li>
-                <a href="/about" className="hover:text-yellow-500 transition-colors">
+                <a href="/" className="hover:text-yellow-500 transition-colors">
                   About
                 </a>
               </li>
