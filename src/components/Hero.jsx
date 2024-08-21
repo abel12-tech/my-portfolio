@@ -50,7 +50,7 @@ export default function Hero() {
   return (
     <section className="relative flex flex-col-reverse md:flex-row items-center justify-between px-5 md:px-20 py-10 min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 overflow-hidden">
       {/* Rotating Circular Icons around Text Section */}
-      <div className="absolute inset-0 flex justify-between items-center">
+      <div className="absolute inset-0 hidden md:flex justify-between items-center">
         <motion.div
           className="relative w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]"
           {...circleAnimation}
